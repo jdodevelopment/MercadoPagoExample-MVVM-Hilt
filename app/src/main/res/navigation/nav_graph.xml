@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/amountFragment">
+
+
+    <fragment
+        android:id="@+id/amountFragment"
+        android:name="ar.com.jdodevelopment.ui.main.amount.AmountFragment"
+        android:label="@string/enter_the_amount"
+        tools:layout="@layout/amount_fragment">
+
+        <action
+            android:id="@+id/choosePaymentMethodAction"
+            app:destination="@id/paymentMethodsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentMethodsFragment"
+        android:name="ar.com.jdodevelopment.ui.main.payment_methods.PaymentMethodsFragment"
+        android:label="Método de pago"
+        tools:layout="@layout/payment_methods_fragment">
+
+        <action
+            android:id="@+id/chooseBankAction"
+            app:destination="@id/banksFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/banksFragment"
+        android:name="ar.com.jdodevelopment.ui.main.banks.BanksFragment"
+        android:label="Banco"
+        tools:layout="@layout/banks_fragment">
+
+        <action
+            android:id="@+id/chooseInstallments"
+            app:destination="@id/installmentsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/installmentsFragment"
+        android:name="ar.com.jdodevelopment.ui.main.installments.InstallmentsFragment"
+        android:label="Cuotas"
+        tools:layout="@layout/installments_fragment">
+
+        <action
+            android:id="@+id/showSuccess"
+            app:destination="@id/successFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="ar.com.jdodevelopment.ui.main.success.SuccessFragment"
+        android:label="Exito"
+        tools:layout="@layout/success_fragment">
+
+        <action
+            android:id="@+id/backToStartAction"
+            app:destination="@id/amountFragment" >
+        </action>
+
+    </fragment>
+
+
+</navigation>
